@@ -8,7 +8,7 @@ function sum(currentState, action) {
   switch(action.type) {
     case 'SUM':
       nextState = parseInt(action.a) + parseInt(action.b);
-      funcWithErr();
+      // funcWithErr();
       return nextState
     default:  
       nextState = currentState; 
@@ -17,5 +17,5 @@ function sum(currentState, action) {
 } 
 
 function funcWithErr() {
-  throw Error('An error from SUM action')
+  throw Error('An error has occured with SUM action')
 }

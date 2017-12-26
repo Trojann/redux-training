@@ -4,10 +4,12 @@
     <title>Redux basic example</title>
     <!--STEP 1.1-->
     <script src="https://npmcdn.com/redux@latest/dist/redux.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="_fakeServerApi/index.js"></script>
     <script type="text/javascript" src="actions/index.js"></script>
     <script type="text/javascript" src="reducers/counter.js"></script>
     <script type="text/javascript" src="reducers/sum.js"></script>
+    <script type="text/javascript" src="reducers/images.js"></script>
     <script type="text/javascript" src="reducers/index.js"></script>
     <script type="text/javascript" src="middlewares/index.js"></script>
     <!--~end STEP 1.1-->
@@ -28,6 +30,11 @@
         <button id="sum">=</button>
         <span id="value2"></span>
       </p>
+      <p>
+        <button id="randomImageButton">Get random Image</button>
+        <br>Count status: <span id="imagesStatus" style="color: blue"></span>
+        <p id="imagesList"></p>
+      </p>
     </div>
     <script>
       // ~end step 2.2
@@ -46,7 +53,10 @@
           var a = document.getElementById('a').value;
           var b = document.getElementById('b').value;
           store.dispatch(getSum(a,b));
-          // document.getElementById('value2').innerHTML = parseInt(a) + parseInt(b);
+        })
+      document.getElementById('randomImageButton')
+        .addEventListener('click', function () {
+          store.dispatch(getRandomImages)
         })
     </script>
     <script type="text/javascript" src="index.js"></script>

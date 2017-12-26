@@ -9,6 +9,7 @@ function counter(currentState, action) {
   switch(action.type) {
     case 'DECREMENT':
       nextState.result = currentState.result - 1;
+      // catchErr();
       return nextState
     case 'INCREMENT':
       nextState.result = currentState.result + 1;
@@ -21,4 +22,8 @@ function counter(currentState, action) {
       nextState = currentState; 
       return nextState;
   }
+}
+
+function catchErr() {
+  throw Error('An error from DECREMENT action')
 }

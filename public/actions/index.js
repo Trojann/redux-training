@@ -10,6 +10,7 @@ var getSum = function(a,b) {
 
 //ASYNC
 var asyncIncrease = function(dispatch, state) {
+	console.log('state: ', state);
 	dispatch({type:'INCREMENT_LOADING'});
 	_fakeServerApi.increaseCount(state.count.result, 
 		function(data) {
@@ -17,3 +18,12 @@ var asyncIncrease = function(dispatch, state) {
 		}
 	);
 }
+
+var getRandomImages = function(dispatch, state) {
+	dispatch({type:'IMAGES_LOADING'});
+	var imgurAPI = 'https://api.imgur.com/3/gallery/random/random/1';
+	$.getJSON(imgurAPI).done(function(data){
+		dispatch({type:'IMAGES', data:data.data});
+	})
+}
+
