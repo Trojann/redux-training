@@ -1,5 +1,5 @@
-function combineReducers(currentState, action) {
-  var nextState = Object.assign({}, currentState);
+combineReducers = (currentState, action) => {
+  var nextState = {...currentState};
   nextState = {
     count: counter(nextState.count, action),
     sum: sum(nextState.sum, action),

@@ -38,22 +38,16 @@
     </div>
     <script>
       $('#decrement')
-        .click(function () {
-          store.dispatch(decrease());
-        })
+        .click(() => store.dispatch(decrease()))
       $('#incrementAsync')
-        .click(function () {
-          store.dispatch(asyncIncrease)
-        })
-      $('#sum').click(function () {
+        .click(() => store.dispatch(asyncIncrease))
+      $('#sum').click(() => {
         var a = $('#a').val();
         var b = $('#b').val();
         store.dispatch(getSum(a,b));
         })
       $('#randomImageButton')
-        .click(function () {
-          store.dispatch(getRandomImages)
-        })
+        .click(() => store.dispatch(getRandomImages))
     </script>
     <script type="text/javascript" src="index.js"></script>
   </body>

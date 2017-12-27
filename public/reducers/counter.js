@@ -1,4 +1,4 @@
-function counter(currentState, action) {
+counter = (currentState, action) => {
   var DEFAULT_STATE = {result: 0, loading:false};
   var nextState = Object.assign({}, currentState);
   if (currentState === undefined) {
@@ -24,6 +24,4 @@ function counter(currentState, action) {
   }
 }
 
-function catchErr() {
-  throw Error('An error from DECREMENT action')
-}
+catchErr = () => {throw Error('An error from DECREMENT action')}

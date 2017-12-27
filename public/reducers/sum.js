@@ -1,4 +1,4 @@
-function sum(currentState, action) {
+sum = (currentState, action) => {
   var DEFAULT_STATE = 0;
   if (currentState === undefined) {
     nextState = DEFAULT_STATE;
@@ -16,6 +16,6 @@ function sum(currentState, action) {
   }
 } 
 
-function funcWithErr() {
+funcWithErr = () => {
   throw Error('An error has occured with SUM action')
 }
