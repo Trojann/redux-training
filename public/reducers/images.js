@@ -1,21 +1,11 @@
-images = (currentState, action) => {
-	var DEFAULT_STATE = {data:[], loading:"Please click Random Images's button"};
-	var nextState = {...currentState};
-	if (currentState === undefined) {
-    	nextState = DEFAULT_STATE;
-    	return nextState;
-  	}
-  	switch(action.type) {
+let DEFAULT = {data:[], loading:"Please click Random Images's button"};
+images = (state = DEFAULT, action) => {
+  switch(action.type) {
     case 'IMAGES':
-      	nextState.data = action.data;
-      	nextState.loading = 'loaded';
-      	return nextState
+    	return {...state, data:action.data, loading:'loaded'}
     case 'IMAGES_LOADING':
-      	nextState.loading = 'loading...';
-      	return nextState
+    	return {...state, loading:'loading...'}
     default: 
-      	nextState = currentState; 
-      	return nextState;
-  	}
-
+      return state;
+  }
 }

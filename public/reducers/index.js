@@ -1,9 +1,8 @@
 combineReducers = (currentState, action) => {
   var nextState = {...currentState};
-  nextState = {
+  return {
     count: counter(nextState.count, action),
     sum: sum(nextState.sum, action),
     images: images(nextState.images, action)
   }
-  return nextState;
 }

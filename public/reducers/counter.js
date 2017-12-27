@@ -1,26 +1,16 @@
-counter = (currentState, action) => {
-  var DEFAULT_STATE = {result: 0, loading:false};
-  var nextState = Object.assign({}, currentState);
-  if (currentState === undefined) {
-    nextState = DEFAULT_STATE;
-    return nextState;
-  }
+var DEFAULT_STATE = {result: 0, loading:false};
 
+counter = (state = DEFAULT_STATE, action) => {
   switch(action.type) {
     case 'DECREMENT':
-      nextState.result = currentState.result - 1;
       // catchErr();
-      return nextState
+      return {...state, result: state.result - 1}
     case 'INCREMENT':
-      nextState.result = currentState.result + 1;
-      nextState.loading = false;
-      return nextState
+      return {...state, result: state.result + 1, loading: false}
     case 'INCREMENT_LOADING':
-      nextState.loading = true;
-      return nextState
+      return {...state, loading: true}
     default: 
-      nextState = currentState; 
-      return nextState;
+      return state;
   }
 }
 

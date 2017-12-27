@@ -1,18 +1,10 @@
-sum = (currentState, action) => {
-  var DEFAULT_STATE = 0;
-  if (currentState === undefined) {
-    nextState = DEFAULT_STATE;
-    return nextState;
-  }
-
+sum = (state = 0, action) => {
   switch(action.type) {
     case 'SUM':
-      nextState = parseInt(action.a) + parseInt(action.b);
       // funcWithErr();
-      return nextState
+      return parseInt(action.a) + parseInt(action.b);
     default:  
-      nextState = currentState; 
-      return nextState;
+      return state
   }
 } 
 
