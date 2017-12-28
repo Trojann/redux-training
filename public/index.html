@@ -1,54 +1,10 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Redux basic example</title>
-    <!--STEP 1.1-->
-    <script src="https://npmcdn.com/redux@latest/dist/redux.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="_fakeServerApi/index.js"></script>
-    <script type="text/javascript" src="actions/index.js"></script>
-    <script type="text/javascript" src="reducers/counter.js"></script>
-    <script type="text/javascript" src="reducers/sum.js"></script>
-    <script type="text/javascript" src="reducers/images.js"></script>
-    <script type="text/javascript" src="reducers/index.js"></script>
-    <script type="text/javascript" src="middlewares/index.js"></script>
-    <!--~end STEP 1.1-->
-  </head>
-  <body>
-    <div id="root"></div>
-    <div>
-      <p>
-        Clicked: <span id="value">?</span> times
-        <button id="decrement">Decrease</button>
-        <button id="incrementAsync">Increment async</button>
-        <br>Count status: <span id="status" style="color: blue"></span>
-      </p>
-      <p>
-        <input type="text" id="a" style="width: 50px">
-        +
-        <input type="text" id="b" style="width: 50px">
-        <button id="sum">=</button>
-        <span id="value2"></span>
-      </p>
-      <p>
-        <button id="randomImageButton">Get random Image</button>
-        <br>Count status: <span id="imagesStatus" style="color: blue"></span>
-        <p id="imagesList"></p>
-      </p>
-    </div>
-    <script>
-      $('#decrement')
-        .click(() => store.dispatch(decrease()))
-      $('#incrementAsync')
-        .click(() => store.dispatch(asyncIncrease))
-      $('#sum').click(() => {
-        const a = $('#a').val();
-        const b = $('#b').val();
-        store.dispatch(getSum(a,b));
-        })
-      $('#randomImageButton')
-        .click(() => store.dispatch(getRandomImages))
-    </script>
-    <script type="text/javascript" src="index.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React :)</title>
+</head>
+<body>
+  <div id="root"></div>
+</body>
 </html>
