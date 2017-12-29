@@ -10,7 +10,6 @@ export default class Sum extends Component{
 		// eslint-disable-next-line
 		sum = parseInt(a) + parseInt(b)
 		this.setState({sum})
-		this.props.sumDesc('Click "sum" button')
 	}
 
 	render() {

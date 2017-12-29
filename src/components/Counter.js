@@ -11,7 +11,6 @@ export default class Counter extends Component{
 		let {count} = {...this.state}
 		count = count - 1
 		this.setState({count})
-		this.props.countDesc('Click "decrease" button')
 	}
 
 	render() {
