@@ -6,17 +6,34 @@ import Sum from './components/Sum';
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-class Example extends Component{
+class Describe extends Component{
 	// constructor(props) {
 	// 	super(props)
+	// 	this.state = {describe:'none'}
 	// }
 
+	render() {
+		return(
+			<div>
+				<div style={{color:'red'}}>Describe: {this.props.desc}</div>
+			</div>
+		)
+	}
+}
+
+class Example extends Component{
+	constructor(props) {
+		super(props)
+		this.state = {describe:'none'}
+	}
+	updateDescribe = (describe) => this.setState({describe})
 	render() {
 		return (
 			<div>
 				<h1>Practice make it perfect ^^</h1>
-      	<Counter />
-				<Sum />
+				<Describe desc={this.state.describe} />
+      	<Counter countDesc={this.updateDescribe} />
+				<Sum sumDesc={this.updateDescribe} />
 			</div>
     );
 	}
