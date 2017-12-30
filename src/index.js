@@ -1,33 +1,15 @@
-import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Counter from './components/Counter.js';
-import Sum from './components/Sum';
-import RandomImages from './components/RandomImages';
+import React from 'react';
+import Examples from './components/Examples';
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import store from './redux/store/config'
 
-class Example extends Component{
-	// constructor(props) {
-	// 	super(props)
-	// }
 
-	render() {
-		return (
-			<div>
-				<h1>Practice make it perfect ^^</h1>
-      	<Counter />
-				<Sum />
-				<RandomImages />
-			</div>
-    );
-	}
+function render() {
+	ReactDOM.render(<Examples />, document.getElementById('root'));
+	registerServiceWorker();
 }
 
-ReactDOM.render(<Example />, document.getElementById('root'));
-registerServiceWorker();
-
-
-if (module.hot) {
-	module.hot.accept()
-}
+render()
+store.subscribe(render)
