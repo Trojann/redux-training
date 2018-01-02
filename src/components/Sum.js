@@ -14,18 +14,20 @@ export default class Sum extends Component{
 	// }
 
 	render() {
+		const {sum, onSum} = this.props
+		const {a,b} = this.state
 		return(
 			<div>
 				<input 
-					value={this.state.a} 
+					value={a} 
 					onChange={(e) => this.setState({a:e.target.value})}
 				/> + 
 				<input 
-					value={this.state.b} 
+					value={b} 
 					onChange={(e) => this.setState({b:e.target.value})}
 				/> = 
-				<span>{this.props.sum}</span>
-				<button onClick={() => this.props.onSum(this.state.a, this.state.b)}>Sum</button>
+				<span>{sum}</span>
+				<button onClick={() => onSum(a, b)}>Sum</button>
 				<button onClick={() => this.setState({sum:0, a:'', b:''})}>Clear</button>
 				<br />
 			</div>

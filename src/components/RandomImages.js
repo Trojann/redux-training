@@ -15,12 +15,13 @@ export default class RandomImages extends Component{
 	// }
 
 	render() {
+		const {images:{data, loading}, onRandomImages} = this.props
 		return(
 			<div>
-				<button onClick={this.props.onRandomImages}>Random Images</button>
-        <br />CountStatus: <span style={{color:"blue"}}>{this.props.images.loading}</span>
+				<button onClick={onRandomImages}>Random Images</button>
+        <br />CountStatus: <span style={{color:"blue"}}>{loading}</span>
         <p />
-        <ImageList images={this.props.images.data} />
+        <ImageList images={data} />
 			</div>
 		)
 	}
